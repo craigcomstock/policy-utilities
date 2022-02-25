@@ -6,6 +6,8 @@
     "download": {
       "description": "Bundle named download to make downloading a file easier. Uses either wget or curl.",
       "tags": [""],
+      "repo": "https://github.com/craigcomstock/policy-utilities",
+      "by": "https://github.com/craigcomstock",
       "dependencies": [""],
       "steps": [
         "copy ./download.cf policy-utilities/download.cf",
