@@ -8,7 +8,7 @@
       "tags": [""],
       "repo": "https://github.com/craigcomstock/policy-utilities",
       "by": "https://github.com/craigcomstock",
-      "dependencies": [""],
+      "dependencies": [],
       "steps": [
         "copy ./download.cf policy-utilities/download.cf",
         "json ./include.json def.json"
