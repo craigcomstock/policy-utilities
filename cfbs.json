@@ -7,7 +7,10 @@
       "description": "Bundle named download to make downloading a file easier. Uses either wget or curl.",
       "tags": [""],
       "dependencies": [""],
-      "steps": ["copy ./utilities/download.cf utilities/download.cf"]
+      "steps": [
+        "copy ./download.cf policy-utilities/download.cf",
+        "json ./include.json def.json"
+      ]
     }
   }
 }

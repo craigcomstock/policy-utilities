@@ -1,0 +1,30 @@
+bundle agent download(url, destination)
+{
+  vars:
+    "destination_dir" string => dirname("${destination}");
+
+  files:
+    "${destination_dir}/." create => "true";
+
+  commands:
+    "${paths.curl}"
+      arglist => {
+        "--silent",
+        "${url}",
+        "-L",
+        "--output",
+        "${destination}"
+      },
+    if => and( not( fileexists(${destination}) ),
+               "_stdlib_path_exists_curl");
+
+    "${paths.wget}"
+      arglist => {
+        "--quiet",
+        "${url}",
+        "--output-document",
+        "${destination}"
+      },
+    if => and( not( fileexists(${destination}) ),
+               "_stdlib_path_exists_wget");
+}
